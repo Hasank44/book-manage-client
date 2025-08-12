@@ -15,7 +15,7 @@ const AddBook = () => {
     }
     console.log(data)
     data.price = price;
-    axios.post(`https://book-manage-ruby.vercel.app/books`, data)
+    axios.post(`https://book-manage-server-rdz3.vercel.app/books`, data)
       .then(() => {
         toast.success('Book added successfully');
         reset();
