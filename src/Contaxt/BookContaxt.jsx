@@ -13,7 +13,7 @@ const BookContext = ({ children }) => {
     setLoading(true);
     setError(null);
     axios
-      .get('https://book-manage-ruby.vercel.app/books')
+      .get('https://book-manage-server-rdz3.vercel.app/books')
       .then((response) => {
         setAllBooks(response.data.books);
       })
@@ -30,7 +30,7 @@ const BookContext = ({ children }) => {
     try {
       setLoading(true);
       setError(null);
-      const response = await axios.get(`https://book-manage-ruby.vercel.app/books/${bookId}`);
+      const response = await axios.get(`https://book-manage-server-rdz3.vercel.app/books/${bookId}`);
       setCurrentBook(response.data.finded);
       return response.data.finded;
     } catch (error) {
@@ -46,7 +46,7 @@ const BookContext = ({ children }) => {
     try {
       setLoading(true);
       setError(null);
-      await axios.delete(`https://book-manage-ruby.vercel.app/books/${bookId}`);
+      await axios.delete(`https://book-manage-server-rdz3.vercel.app/books/${bookId}`);
       setAllBooks((prevBooks) => prevBooks.filter((book) => book._id !== bookId));
     } catch (error) {
       setError(error.message);
