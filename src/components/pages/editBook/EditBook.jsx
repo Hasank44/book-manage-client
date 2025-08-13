@@ -53,7 +53,7 @@ const EditBook = () => {
     data.price = price;
     setIsSubmitting(true);
     try {
-      await axios.put(`https://book-manage-server-rdz3.vercel.app/books/${id}`, data);
+      await axios.put(`https://book-manage-server.vercel.app/books/${id}`, data);
       toast.success('Book updated successfully');
       updateBook({ ...data, id });
       navigate(`/books/${id}`);
